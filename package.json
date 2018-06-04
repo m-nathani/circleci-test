@@ -1,0 +1,22 @@
+{
+  "name": "circleci",
+  "version": "1.0.0",
+  "description": "Test Circleci",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/m-nathani/circleci-test.git"
+  },
+  "keywords": [
+    "circleci"
+  ],
+  "author": "mudza100@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m-nathani/circleci-test/issues"
+  },
+  "homepage": "https://github.com/m-nathani/circleci-test#readme"
+}
