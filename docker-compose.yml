@@ -1,0 +1,11 @@
+version: '2'
+services:
+  circleci-test:
+    image: mudza100/circleci-test:v1
+    environment:
+      PORT: '8000'
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
+
