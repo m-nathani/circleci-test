@@ -5,9 +5,16 @@ jobs:
     docker:
       - image: circleci/node:7.10
     working_directory: ~/training/circleci-test
+    
     steps:
       - checkout
+      - restore_cache:
+          key: dependency-cache-{{ .Branch }}-{{ checksum "package.json" }}
       - run: npm install
+      - save_cache:
+          key: dependency-cache-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
 
   deploy:
     docker:
@@ -15,6 +22,8 @@ jobs:
     working_directory: ~/training/circleci-test
     steps:
       - checkout
+      - restore_cache:
+          key: dependency-cache-{{ .Branch }}-{{ checksum "package.json" }}
       - run: node index.js
 
 workflows:
